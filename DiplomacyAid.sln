@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiplomacyAid", "DiplomacyAid\DiplomacyAid.csproj", "{41F71D42-0ACD-41C6-99BF-2B81478F9BC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41F71D42-0ACD-41C6-99BF-2B81478F9BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F71D42-0ACD-41C6-99BF-2B81478F9BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F71D42-0ACD-41C6-99BF-2B81478F9BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F71D42-0ACD-41C6-99BF-2B81478F9BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A2E60A3-B59A-4A38-8392-C47C5CAF6475}
+	EndGlobalSection
+EndGlobal
