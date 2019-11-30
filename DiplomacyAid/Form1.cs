@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 // https://github.com/matthewmichel/DiplomacyAid
 
 namespace DiplomacyAid
@@ -16,6 +18,8 @@ namespace DiplomacyAid
         private bool _loggedIn = false;
 
         List<Control> toolbarControls = new List<Control>();
+
+        static List<Territory> territoryList = new List<Territory>();
 
         public enum Phase
         {
@@ -145,12 +149,44 @@ namespace DiplomacyAid
 
         private void OrderWritingPhase_Btn_Click(object sender, EventArgs e)
         {
+            int[] test = { 0, 1, 2 };
             CurrentPhase = Phase.Order_Writing;
+            Territory newTerritory = new Territory(1, "test", false, false, true, test);
+            string json = JsonConvert.SerializeObject(newTerritory);
+            output_Txt.Text = json;
+            using(StreamWriter w = new StreamWriter("TerritoryList.json"))
+            {
+                w.Write(json);
+            }
         }
 
         private void OrderExecutionPhase_Btn_Click(object sender, EventArgs e)
         {
             CurrentPhase = Phase.Order_Execution;
+            string outputTxt = "";
+
+            using (StreamReader r = new StreamReader("TerritoryList.json"))
+            {
+                string json = r.ReadToEnd();
+                dynamic array = JsonConvert.DeserializeObject(json);
+                foreach (var item in array)
+                {
+                    outputTxt += item["borderTerr"];
+                    Territory newTerritory = CreateTerritory(item["id"] as string, item["name"] as string, item["isCapitol"] as string, item["isCoast"] as string, item["isSupplyPoint"] as string, item["borderTerr"] as string[]);
+                    territoryList.Add(newTerritory);
+                    //Console.WriteLine("{0} {1}", item.temp, item.vcc);
+                    //outputTxt += " ";
+                    //outputTxt += item["isSupplyPoint"];
+                }
+
+            }
+
+            foreach(Territory t in territoryList)
+            {
+                outputTxt += $" {t.TerritoryId}";
+            }
+
+            output_Txt.Text = outputTxt;
         }
 
         private void ResultsPhase_Btn_Click(object sender, EventArgs e)
@@ -162,5 +198,26 @@ namespace DiplomacyAid
         {
             CurrentPhase = Phase.Redistribution;
         }
+
+        private Territory CreateTerritory(string id, string name, string isCapital, string isCoast, string isSupplyPoint, string[] borderingTerritories)
+        {
+            int intId;
+            bool boolIsCapitol = isCapital == "true" ? true : false;
+            bool boolIsCoast = isCoast == "true" ? true : false;
+            bool boolIsSupplyPoint = isSupplyPoint == "true" ? true : false;
+            bool idConvertableToInt = int.TryParse(id, out intId);
+            int[] borderingTerritory = new int[borderingTerritories.Length];
+
+            foreach(string s in borderingTerritories)
+            {
+                int terrId = int.Parse(s);
+                borderingTerritory.Append(terrId);
+            }
+
+            return new Territory(intId, name, boolIsCapitol, boolIsCoast, boolIsSupplyPoint, borderingTerritory);
+
+        }
+
+
     }
 }

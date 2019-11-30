@@ -8,10 +8,22 @@ namespace DiplomacyAid
 {
     class Territory
     {
-        string[] borderTerr = {};
-        bool supplyPoint;
-        bool isCapitol;
-        bool isCoast;
+        public int[] BorderTerr;
+        public bool SupplyPoint;
+        public bool IsCapitol;
+        public bool IsCoast;
+        public string TerritoryName;
+        public int TerritoryId;
+
+        public Territory(int territoryId, string name, bool isCapitol, bool isCoast, bool isSupplyPoint, int[] borderTerr)
+        {
+            TerritoryId = territoryId;
+            TerritoryName = name;
+            IsCapitol = isCapitol;
+            IsCoast = isCoast;
+            SupplyPoint = isSupplyPoint;
+            BorderTerr = borderTerr;
+        }
 
         Troop occupyingTroop;
         Country motherCountry;

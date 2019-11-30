@@ -72,6 +72,7 @@
             this.username_Txt.Name = "username_Txt";
             this.username_Txt.Size = new System.Drawing.Size(151, 20);
             this.username_Txt.TabIndex = 3;
+            this.username_Txt.Text = "gamemaster";
             // 
             // password_Txt
             // 
@@ -80,6 +81,7 @@
             this.password_Txt.PasswordChar = '*';
             this.password_Txt.Size = new System.Drawing.Size(151, 20);
             this.password_Txt.TabIndex = 4;
+            this.password_Txt.Text = "password";
             // 
             // logIn_Btn
             // 

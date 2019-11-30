@@ -43,6 +43,7 @@
             this.redistributionPhase_Btn = new System.Windows.Forms.Button();
             this.currentPhase_Lbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.output_Txt = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,14 +91,14 @@
             // logIn_ToolstripItem
             // 
             this.logIn_ToolstripItem.Name = "logIn_ToolstripItem";
-            this.logIn_ToolstripItem.Size = new System.Drawing.Size(180, 22);
+            this.logIn_ToolstripItem.Size = new System.Drawing.Size(120, 22);
             this.logIn_ToolstripItem.Text = "Log In";
             this.logIn_ToolstripItem.Click += new System.EventHandler(this.LogInToolStripMenuItem1_Click_1);
             // 
             // signOut_ToolstripItem
             // 
             this.signOut_ToolstripItem.Name = "signOut_ToolstripItem";
-            this.signOut_ToolstripItem.Size = new System.Drawing.Size(180, 22);
+            this.signOut_ToolstripItem.Size = new System.Drawing.Size(120, 22);
             this.signOut_ToolstripItem.Text = "Sign Out";
             this.signOut_ToolstripItem.Click += new System.EventHandler(this.SignOut_ToolstripItem_Click);
             // 
@@ -189,12 +190,22 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Phase:";
             // 
+            // output_Txt
+            // 
+            this.output_Txt.Location = new System.Drawing.Point(299, 184);
+            this.output_Txt.Multiline = true;
+            this.output_Txt.Name = "output_Txt";
+            this.output_Txt.ReadOnly = true;
+            this.output_Txt.Size = new System.Drawing.Size(452, 229);
+            this.output_Txt.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(763, 479);
+            this.Controls.Add(this.output_Txt);
             this.Controls.Add(this.currentPhase_Lbl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.redistributionPhase_Btn);
@@ -235,6 +246,7 @@
         private System.Windows.Forms.Button redistributionPhase_Btn;
         private System.Windows.Forms.Label currentPhase_Lbl;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox output_Txt;
     }
 }
 
