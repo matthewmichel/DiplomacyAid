@@ -1,4 +1,43 @@
 ﻿[
-{"BorderTerr":[0,1,2],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"test","TerritoryId":1},
-{"BorderTerr":[0,1,2],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"test","TerritoryId":1}
+{"BorderTerr":[],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"Boh","TerritoryId":0},
+  {
+    "BorderTerr": [],
+    "SupplyPoint": true,
+    "IsCapitol": false,
+    "IsCoast": false,
+    "TerritoryName": "Bud",
+    "TerritoryId": 1
+  },
+  {
+    "BorderTerr": [],
+    "SupplyPoint": false,
+    "IsCapitol": false,
+    "IsCoast": false,
+    "TerritoryName": "Gal",
+    "TerritoryId": 3
+  },
+  {
+    "BorderTerr": [],
+    "SupplyPoint": true,
+    "IsCapitol": false,
+    "IsCoast": true,
+    "TerritoryName": "Tri",
+    "TerritoryId": 4
+  },
+  {
+    "BorderTerr": [],
+    "SupplyPoint": false,
+    "IsCapitol": false,
+    "IsCoast": false,
+    "TerritoryName": "Tyr",
+    "TerritoryId": 5
+  },
+  {
+    "BorderTerr": [],
+    "SupplyPoint": true,
+    "IsCapitol": true,
+    "IsCoast": false,
+    "TerritoryName": "Vie",
+    "TerritoryId": 6
+  },
 ]
