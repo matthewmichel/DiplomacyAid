@@ -149,15 +149,7 @@ namespace DiplomacyAid
 
         private void OrderWritingPhase_Btn_Click(object sender, EventArgs e)
         {
-            int[] test = { 0, 1, 2 };
             CurrentPhase = Phase.Order_Writing;
-            Territory newTerritory = new Territory(1, "test", false, false, true, test);
-            string json = JsonConvert.SerializeObject(newTerritory);
-            output_Txt.Text = json;
-            using(StreamWriter w = new StreamWriter("TerritoryList.json"))
-            {
-                w.Write(json);
-            }
         }
 
         private void OrderExecutionPhase_Btn_Click(object sender, EventArgs e)
@@ -169,10 +161,11 @@ namespace DiplomacyAid
             {
                 string json = r.ReadToEnd();
                 dynamic array = JsonConvert.DeserializeObject(json);
+                //outputTxt += array[0];
                 foreach (var item in array)
                 {
-                    outputTxt += item["borderTerr"];
-                    Territory newTerritory = CreateTerritory(item["id"] as string, item["name"] as string, item["isCapitol"] as string, item["isCoast"] as string, item["isSupplyPoint"] as string, item["borderTerr"] as string[]);
+                    //outputTxt += item;
+                    Territory newTerritory = JsonConvert.DeserializeObject<Territory>(item.ToString());
                     territoryList.Add(newTerritory);
                     //Console.WriteLine("{0} {1}", item.temp, item.vcc);
                     //outputTxt += " ";
@@ -181,9 +174,9 @@ namespace DiplomacyAid
 
             }
 
-            foreach(Territory t in territoryList)
+            foreach (Territory t in territoryList)
             {
-                outputTxt += $" {t.TerritoryId}";
+                outputTxt += $" {t.TerritoryName}";
             }
 
             output_Txt.Text = outputTxt;
