@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DiplomacyAid
 {
@@ -17,6 +18,12 @@ namespace DiplomacyAid
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            using (StreamReader r = new StreamReader("testOrder2.json"))
+            {
+                string json = r.ReadToEnd();
+                List<Item> items = JsonConvert.DeserializeObject<List<Item>>(json);
+            }
         }
     }
 }
