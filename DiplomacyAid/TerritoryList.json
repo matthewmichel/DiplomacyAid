@@ -1,4 +1,8 @@
 ﻿[
-{"BorderTerr":[0,1,2],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"test","TerritoryId":1},
-{"BorderTerr":[0,1,2],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"test","TerritoryId":1}
+{"BorderTerr":[7,8],"SupplyPoint":false,"IsCapitol":false,"IsCoast":true,"TerritoryName":"Cly","TerritoryId":6},
+{"BorderTerr":[6,8,11],"SupplyPoint":true,"IsCapitol":false,"IsCoast":true,"TerritoryName":"Edi","TerritoryId":7},
+{"BorderTerr":[6,7,11,10],"SupplyPoint":true,"IsCapitol":false,"IsCoast":true,"TerritoryName":"Lvp","TerritoryId":8},
+{"BorderTerr":[10,11],"SupplyPoint":true,"IsCapitol":true,"IsCoast":true,"TerritoryName":"Lon","TerritoryId":9},
+{"BorderTerr":[8,9,11],"SupplyPoint":false,"IsCapitol":false,"IsCoast":true,"TerritoryName":"Wal","TerritoryId":10},
+{"BorderTerr":[7,8,9,10],"SupplyPoint":false,"IsCapitol":false,"IsCoast":true,"TerritoryName":"Yor","TerritoryId":11},
 ]
