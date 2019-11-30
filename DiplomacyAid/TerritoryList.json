@@ -1,1 +1,4 @@
-﻿
+﻿[
+{"BorderTerr":[0,1,2],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"test","TerritoryId":1},
+{"BorderTerr":[0,1,2],"SupplyPoint":true,"IsCapitol":false,"IsCoast":false,"TerritoryName":"test","TerritoryId":1}
+]
