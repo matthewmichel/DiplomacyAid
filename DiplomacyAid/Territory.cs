@@ -8,5 +8,20 @@ namespace DiplomacyAid
 {
     class Territory
     {
+        string[] borderTerr = {};
+        bool supplyPoint;
+        bool isCapitol;
+        bool isCoast;
+
+        Troop occupyingTroop;
+        Country motherCountry;
+
+    }
+
+    enum terType
+    {
+        land,
+        sea,
+        coast
     }
 }
